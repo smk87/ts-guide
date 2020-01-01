@@ -5,6 +5,7 @@ interface Reportable {
   summary(): string;
 }
 
+// A vehicle object
 const oldCivic = {
   model: 'civic',
   year: new Date(),
@@ -18,8 +19,19 @@ const oldCivic = {
   }
 };
 
-const printVehicle = (item: Reportable): void => {
+// A drink object
+const drink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar} grams of sugar.`;
+  }
+};
+
+const printSummary = (item: Reportable): void => {
   console.log(item.summary());
 };
 
-printVehicle(oldCivic);
+printSummary(oldCivic);
+printSummary(drink);
